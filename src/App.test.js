@@ -1,8 +1,16 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { fireEvent, render, screen, within } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
+test("shows the default additional information for animals without details", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+  const alert = jest.spyOn(window, "alert").mockImplementation(() => {});
+  const lionCard = screen
+    .getByRole("heading", { name: "Lion" })
+    .closest("article");
+
+  fireEvent.click(within(lionCard).getByRole("button", { name: "More Info" }));
+
+  expect(alert).toHaveBeenCalledWith("notes: No Additional Information");
+  alert.mockRestore();
 });

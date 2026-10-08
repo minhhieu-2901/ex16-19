@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Ex16 from "./components/Ex16";
+import Ex17 from "./components/Ex17";
+import Ex18 from "./components/Ex18";
+import Ex19 from "./components/Ex19";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Ex16 />
+      <Ex17 />
+      <Ex18 />
+      <Ex19 />
     </div>
   );
 }
